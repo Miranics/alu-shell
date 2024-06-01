@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'NR>1{ORS=""} {print substr($0,1,1)} END{print "\n"}' "$1"
+while IFS= read -r line; do echo -n "${line:0:1}"; done < "$1"; echo
