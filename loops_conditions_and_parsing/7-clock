@@ -14,4 +14,4 @@ do
     else
         minutes=$((minutes+1))
     fi
-done
+done | head -n 70
