@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "$2" | tr 'a-zA-Z' 'n-za-mN-ZA-M'
