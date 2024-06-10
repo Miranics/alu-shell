@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Display a list of currently running processes in a user-oriented format
+# Display a list of all currently running processes in a user-oriented format
 echo "List of all currently running processes:"
-ps -e -o user,pid,ppid,tty,time,cmd
+# Adjust the ps command to ensure it fits the expected format
+ps -e -o user,pid,ppid,tty,start,time,cmd --sort=start_time
 
 echo
 echo "Process hierarchy:"
+# Display the process hierarchy with pstree
 pstree -p
