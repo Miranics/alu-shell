@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Display a list of currently running processes in a user-oriented format
 echo "List of all currently running processes:"
 ps -e -o user,pid,ppid,tty,time,cmd
