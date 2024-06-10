@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Bash (init) script 11-manage_my_process that manages manage_my_process
+# Bash script 11-manage_my_process that manages manage_my_process
 
 argv1=$1
 tmpfile="/var/run/my_process.pid"
