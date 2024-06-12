@@ -1,7 +1,38 @@
 #!/usr/bin/env bash
 # This script displays the content of /etc/passwd using a while loop and IFS
 
-while IFS=: read -r username gid gang home_directory passwd info
+
+
+while IFS= read -r line
+
 do
-    printf "The user %s is part of the %s gang, lives in %s and rides %s. User ID's place is protected by the passcode %s, more info about the user here: %s:%s\n" "$username" "$gid" "$gang" "$home_directory" "$passwd" "$home_directory" "$info"
-done < /etc/passwd
+
+	    username=$(echo "$line" | cut -f 1 -d ':')
+
+	        password=$(echo "$line" | cut -f 2 -d ':')
+
+		    userID=$(echo "$line" | cut -f 3 -d ':')
+
+		        groupID=$(echo "$line" | cut -f 4 -d ':')
+
+			    userINFO=$(echo "$line" | cut -f 5 -d ':')
+
+			        home=$(echo "$line" | cut -f 6 -d ':')
+
+				    command=$(echo "$line" | cut -f 7 -d ':')
+
+				    
+
+
+
+
+
+				        echo -n "The user $username is part of the $groupID gang, "
+
+					    echo -n "lives in $home and rides $command."
+
+					        echo -n " $userID's place is protected by the passcode $password, "
+
+						    echo "more info about the user here: $userINFO"
+
+					    done < "/etc/passwd"
